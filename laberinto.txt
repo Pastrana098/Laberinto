@@ -1,0 +1,53 @@
+ for r in range( len(lineas)):
+            for c in  range( len(lineas[r].strip().split(',') )) :
+
+for r in range( len(lineas)):
+            lineaBis = lineas[r].strip().split(',')
+            for c in  range( len(lineaBis )) :
+                self.laberinto.set_item(r,c,lineaBis[c])
+
+class LaberintoADT:
+    def __init__( self , archivo ):
+        self.laberinto = None #Array2D
+	self.camino = StackADT()
+	self.inicializa( archivo )
+	self.laberinto.to_string()
+	print("stack")
+	self.camino.to_string()
+
+    ***
+    P -> Pared
+    c -> Corredor
+    E -> Entrada	
+    S -> Salida
+    X -> Ya visitado
+    ***
+    def inicializa( self , archivo ¿):
+	entrada = open( archivo , 'rt' )
+	self.laberinto = Array2D( int(entrada.readline().strip()) ,int(entr
+	self.laberinto.clear('p')
+	lineas = entrada.readlines()
+	#print("Lineas:")
+	#print(lineas)
+	for r in range( len(lineas)):
+	    lineaBis = lineas[r].strip().split(',')
+	    for c in  range( len(lineaBis )) :
+	        self.laberinto.set_item(r,c,lineaBis[c])
+
+	# buscar la entrada
+	for r in range( self.laberinto.get_row_size() ):
+	    for c in range( self.laberinto.get_col_size() ):
+ 	   	if self.laberinto.get_item() == 'E':
+	  	    self.camino.push( (r,c) )
+	
+
+
+
+
+
+
+
+
+
+
+
